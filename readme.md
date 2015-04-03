@@ -4,19 +4,19 @@ File reading library for Programming Competitions
 usage:
 -------------
 
-
-# Returns number of lines in file
 def get_len(fname):
+Returns number of lines in file
+
 
 
 def get_line(fname, linenum):
-#Return Specified line from line number
+Return Specified line from line number
 
 
 
 get_element(fname,linenum,index)
-# Returns certain element given line number and index.
-#Currently first position is 0 2nd is 2 and 3rd is 4.. idk why
+Returns certain element given line number and index.
+Currently first position is 0 2nd is 2 and 3rd is 4.. idk why
 
 
 iterate_certainlines(fname,beginline,endline):
