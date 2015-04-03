@@ -1,5 +1,5 @@
 import csv
-import api as api
+import api
 
 
 fopen = open('info.txt','r')
@@ -14,7 +14,7 @@ print api.iterate_certainlines(fname,0,2)
 
 
 def addOne(x):
-	return x+i
+	return x+1
 
 print ("printing the array with the function applied")
 print api.func_nextlines(fname,addOne,0,2)
