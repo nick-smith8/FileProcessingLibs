@@ -1,8 +1,6 @@
-import csv
 import fr
 
 
-fopen = open('info.txt','r')
 fname = 'info.txt'
 
 print fr.get_len(fname)
