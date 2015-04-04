@@ -1,7 +1,7 @@
 import fr
 
 
-fname = 'info.txt'
+fname = '../input/info.txt'
 
 print fr.get_len(fname)
 print fr.get_line(fname,1),

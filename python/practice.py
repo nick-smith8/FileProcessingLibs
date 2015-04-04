@@ -1,6 +1,6 @@
 import fr
 
-fname='input.in'
+fname='../input/input.in'
 
 numOfCases = int(fr.get_line(fname,0))
 case = 1
