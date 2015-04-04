@@ -1,3 +1,4 @@
+#! /usr/bin/python
 import fr
 
 fname='../input/input.in'
@@ -20,27 +21,27 @@ prevSecondRow = 7
 isDuplicate = 0
 noMatch = True
 
-
-data1 = [[0 for x in range(4)] for x in range(4)]
-data2 = [[0 for x in range(4)] for x in range(4)]
-
 firstRow = int(fr.get_element(fname,startingFirstRow,0))
 secondRow = int(fr.get_element(fname,startingSecondRow,0))
 
 firstLine = fr.get_line(fname,(startingFirstRow + firstRow))
 secondLine = fr.get_line(fname,(startingSecondRow + secondRow))
 
-print "This is first line", firstLine
-print "This is second line", secondLine
 
 while case != 100:
+    #print "FirstLine: ",firstLine
+    #print "SecondLine: ",secondLine
+
     for i in firstLine:
+    #    print "This is i:" ,i
         for j in secondLine:
+    #        print "This is j: ", j
             if i == j:
+    #            print "They were a Match"
                 magicNum = i
                 isDuplicate += 1
                 noMatch = False
-
+   # print isDuplicate,"Duplicate num before compare"
     if isDuplicate > 1:
         print 'Case #', case, ':','Bad magician'
     elif noMatch == True:
@@ -51,8 +52,11 @@ while case != 100:
     case = case + 1
     isDuplicate = 0
 
-    firstLine = fr.get_line(fname,prevFirstRow+10)
-    secondLine = fr.get_line(fname,prevSecondRow+10)
+    startingFirstRow += 10
+    startingSecondRow +=10
+
+    firstLine = fr.get_line(fname,(startingFirstRow+int(fr.get_element(fname,startingFirstRow,0))))
+    secondLine = fr.get_line(fname,(startingSecondRow+int(fr.get_element(fname,startingSecondRow,0))))
 
     prevFirstRow += 10
     prevSecondRow += 10
