@@ -12,6 +12,9 @@ def get_line(fname, linenum):
     with open(fname) as f:
         for i, line in enumerate(f):
             if i == linenum:
+                line = line.split(' ')
+                line[-1] = line[-1].strip()
+                line = [ int(x) for x in line ]
                 return line
 
 

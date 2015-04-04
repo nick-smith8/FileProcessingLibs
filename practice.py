@@ -1,8 +1,11 @@
 import fr
 
 fname='input.in'
+print fr.get_line(fname,0)
+print fr.get_line(fname,2)
 
-numOfCases = int(fr.get_line(fname,0))
+numOfCases = fr.get_line(fname,0)
+print numOfCases
 case = 1
 
 magicNum = 0
@@ -16,7 +19,7 @@ startingSecondRow = 6
 prevFirstRow = 2
 prevSecondRow = 7
 
-isDuplicate = False
+isDuplicate = 0
 noMatch = True
 
 
@@ -29,16 +32,18 @@ secondRow = int(fr.get_element(fname,startingSecondRow,0))
 firstLine = fr.get_line(fname,(startingFirstRow + firstRow))
 secondLine = fr.get_line(fname,(startingSecondRow + secondRow))
 
-if case != 100:
+print "This is first line", firstLine
+print "This is second line", secondLine
+
+while case != 100:
     for i in firstLine:
         for j in secondLine:
-            if i == j and isDuplicate == False:
-                print j
+            if i == j:
                 magicNum = i
-                isDuplicate = True
+                isDuplicate += 1
                 noMatch = False
 
-    if isDuplicate == True:
+    if isDuplicate > 1:
         print 'Case #', case, ':','Bad magician'
     elif noMatch == True:
         print 'Case #', case, ':', 'Volunteer cheated!'
@@ -46,7 +51,8 @@ if case != 100:
         print 'Case #', case, ':', magicNum
 
     case = case + 1
-    
+    isDuplicate = 0
+
     firstLine = fr.get_line(fname,prevFirstRow+10)
     secondLine = fr.get_line(fname,prevSecondRow+10)
 
@@ -54,6 +60,5 @@ if case != 100:
     prevSecondRow += 10
 
     noMatch = True
-    isDuplicate = False
 
 
